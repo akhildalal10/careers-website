@@ -41,16 +41,25 @@
         height: 460px;
         width: 100%;
         object-fit: cover;
+        margin-bottom: 16px;
       }
     </style>
   </head>
   <body>
+    {% include 'nav.html' %}
+    <img class="img-fluid" id="banner"src="http://127.0.0.1:5000/static/banner.jpg" 
+      height='300'>
     <div class="container" >
      <h1 class="text-center mt-2 mb-4">Career {{company_name}}</h1>
-     <img class="img-fluid" id="banner"src="http://127.0.0.1:5000/static/banner.jpg" 
-      height='320'>
-     <h2 class="text-center mt-2 mb-4">About Career Compass</h2>
-     <p>Career Compass is your trusted guide to discovering job opportunities and advancing your career. We specialize in providing up-to-date job postings, career tips, and insights to help individuals make informed decisions and achieve their professional goals. Whether you're a fresh graduate or an experienced professional, Career Compass is here to point you in the right direction.</p>
+     <div class="row" style="margin-bottom: 16px">
+       <div class="col-md-8">
+     <p>Career Compass serves as a bridge between talent and opportunity, empowering individuals to unlock their true potential by providing up-to-date job postings, career tips, and insights tailored to diverse career stages. Whether you're a job seeker, career switcher, or aiming for professional growth, our platform simplifies the job search process with a user-friendly interface and personalized recommendations to help you find roles that align with your skills and aspirations. Beyond job postings, we offer expert guidance on crafting resumes, acing interviews, and building standout professional profiles. Our career tips section is packed with industry insights, workplace advice, and tools to navigate challenges in today’s competitive job market. For employers, Career Compass is a reliable partner in sourcing top talent and fostering meaningful connections. We also host webinars, workshops, and networking events to help individuals expand their horizons and achieve their goals. Join Career Compass to take the first step towards a fulfilling career journey, with the right tools, support, and direction at every turn.
+     </p>
+       </div>
+       <div class="d-none d-md-block col-md-4">
+       <img src="/static/people.jpg" style="height: 320px;border-radius: 10px;">
+       </div>
+    </div>
      <h2 class="text-center mt-2 mb-4">Open Positions</h2>
      <div> 
       {% for job in jobs %}
@@ -58,8 +67,10 @@
       {% endfor %}
      </div>
      <div class="text-center">
-     <button class="btn btn-primary btn-sm">Contact Us</button>
+     <a href="mailto:careercompass.ai?subject=Questions%20about%20Job%20Openings&body=My%20Name%3A%20%3Cyour%20name%20here%3E%0D%0A%0D%0AMy%20Question%3A%20%3Center%20question%20here%3E" class="btn btn-primary btn-sm">Contact Us</a>
      </div>
     </div> 
+    {% include 'footer.html' %}
   </body>
+
 </html>
